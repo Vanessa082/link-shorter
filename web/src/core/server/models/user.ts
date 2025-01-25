@@ -8,20 +8,20 @@ const schemaDefinition = {
   },
   clerkId: {
     type: String,
-    required: true
+    required: true,
   },
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
 } as const;
 
-const userSchema = new Schema(schemaDefinition, { timestamps: true })
+const userSchema = new Schema(schemaDefinition, { timestamps: true });
 
-export const UserModel = model('User', userSchema)
+export const UserModel = model("User", userSchema);
 
 export type UserDocument = InferRawDocType<typeof schemaDefinition>;
